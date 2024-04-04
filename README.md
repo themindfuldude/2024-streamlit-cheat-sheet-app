@@ -1,5 +1,7 @@
 # 2024 Streamlit Cheat Sheet
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://2024-app-cheat-sheet-app-ewxybnuwqx4qg64fcelqqd.streamlit.app/)
+
 2024 Streamlit Cheatsheet App v1.31.0
 <img width="314" alt="logomark_website" src="https://github.com/themindfuldude/2024-streamlit-cheat-sheet-app/assets/130063458/38f49472-96af-410a-91d5-0836e624db21">
 
