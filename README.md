@@ -14,7 +14,7 @@ Author:
 Thanks to : https://github.com/daniellewisDL
 * For his 2023 version of the code
 
-# 2024 Version
+# Version
 * Based on 2024 Streamlit v1.31.0
 * Python 3.11
 
