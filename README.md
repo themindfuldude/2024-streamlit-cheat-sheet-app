@@ -1,6 +1,8 @@
 # 2024 Streamlit Cheat Sheet
 
 2024 Streamlit Cheatsheet App v1.31.0
+<img width="314" alt="logomark_website" src="https://github.com/themindfuldude/2024-streamlit-cheat-sheet-app/assets/130063458/38f49472-96af-410a-91d5-0836e624db21">
+
 
 Code is responsive, so it should work on mobile devices.
 
