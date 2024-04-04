@@ -137,8 +137,9 @@ Thanks to : https://github.com/daniellewisDL
                 col1, col2, col3 = st.columns(3)
 
 ##########################
-    # COLUMN 1
+# Column 1
 ##########################
+
     - Display text
 
                 col1.subheader('Display text')
