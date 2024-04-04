@@ -49,168 +49,178 @@ Thanks to : https://github.com/daniellewisDL
 
 - initial page config:
 
-st.set_page_config(
-     page_title='Streamlit cheat sheet',
-     layout="wide",
-     initial_sidebar_state="expanded",
-)
+            st.set_page_config(
+                 page_title='Streamlit cheat sheet',
+                 layout="wide",
+                 initial_sidebar_state="expanded",
+            )
 
-def main():
-    cs_sidebar()
-    cs_body()
+            def main():
+                cs_sidebar()
+                cs_body()
+            
+                return None
 
-    return None
+- Thanks to streamlitopedia for the following code snippet
 
-# Thanks to streamlitopedia for the following code snippet
+               def img_to_bytes(img_path):
+                            img_bytes = Path(img_path).read_bytes()
+                            encoded = base64.b64encode(img_bytes).decode()
+                            return encoded
 
-def img_to_bytes(img_path):
-    img_bytes = Path(img_path).read_bytes()
-    encoded = base64.b64encode(img_bytes).decode()
-    return encoded
+- sidebar
 
-# sidebar
+              def cs_sidebar():
+            
+                st.sidebar.markdown('''[<img src='data:image/png;base64,{}' class='img-fluid' width=32 height=32>](https://streamlit.io/)'''.format(img_to_bytes("streamlit_logo.png")), unsafe_allow_html=True)
+                st.sidebar.header('2024 Streamlit Cheat Sheet')
+            
+                st.sidebar.markdown('''
+            <small>Gregory Kennedy [Linkedin](https://www.linkedin.com/in/gregorykennedymindfuldude/), [Streamlit v1.31.0 docs](https://docs.streamlit.io/).</small>
+                ''', unsafe_allow_html=True)
+            
+                st.sidebar.markdown('__Install and import__')
+            
+                st.sidebar.code('$ pip install streamlit')
+            
+                st.sidebar.code('''
+# 
+- Import convention
 
-def cs_sidebar():
 
-    st.sidebar.markdown('''[<img src='data:image/png;base64,{}' class='img-fluid' width=32 height=32>](https://streamlit.io/)'''.format(img_to_bytes("streamlit_logo.png")), unsafe_allow_html=True)
-    st.sidebar.header('2024 Streamlit Cheat Sheet')
-
-    st.sidebar.markdown('''
-<small>Gregory Kennedy [Linkedin](https://www.linkedin.com/in/gregorykennedymindfuldude/), [Streamlit v1.31.0 docs](https://docs.streamlit.io/).</small>
-    ''', unsafe_allow_html=True)
-
-    st.sidebar.markdown('__Install and import__')
-
-    st.sidebar.code('$ pip install streamlit')
-
-    st.sidebar.code('''
-# Import convention
->>> import streamlit as st
-''')
-
-    st.sidebar.markdown('__Add widgets to sidebar__')
-    st.sidebar.code('''
-# Just add it after st.sidebar:
->>> a = st.sidebar.radio(\'Choose:\',[1,2])
-    ''')
-
-    st.sidebar.markdown('__Magic commands__')
-    st.sidebar.code('''
-'_This_ is some __Markdown__'
-a=3
-'dataframe:', data
-''')
-
-    st.sidebar.markdown('__Command line__')
-    st.sidebar.code('''
-$ streamlit --help
-$ streamlit run your_script.py
-$ streamlit hello
-$ streamlit config show
-$ streamlit cache clear
-$ streamlit docs
-$ streamlit --version
-    ''')
-
-    st.sidebar.markdown('__Pre-release features__')
-    st.sidebar.code('''
-pip uninstall streamlit
-pip install streamlit-nightly --upgrade
-    ''')
-    st.sidebar.markdown('<small>Learn more about [experimental features](https://docs.streamlit.io/library/advanced-features/prerelease#beta-and-experimental-features)</small>', unsafe_allow_html=True)
-
-    st.sidebar.markdown('''<hr>''', unsafe_allow_html=True)
-    st.sidebar.markdown('''<small>[2024 Cheat sheet v1.31.0](https://github.com/daniellewisDL/streamlit-cheat-sheet)  | Apr 2024 | [Gregory Kennedy](https://daniellewisdl.github.io/)</small>''', unsafe_allow_html=True)
-
-    return None
+              >>> import streamlit as st
+            ''')
+            
+                st.sidebar.markdown('__Add widgets to sidebar__')
+                st.sidebar.code('''
+            # Just add it after st.sidebar:
+            >>> a = st.sidebar.radio(\'Choose:\',[1,2])
+                ''')
+            
+                st.sidebar.markdown('__Magic commands__')
+                st.sidebar.code('''
+            '_This_ is some __Markdown__'
+            a=3
+            'dataframe:', data
+            ''')
+            
+                st.sidebar.markdown('__Command line__')
+                st.sidebar.code('''
+            $ streamlit --help
+            $ streamlit run your_script.py
+            $ streamlit hello
+            $ streamlit config show
+            $ streamlit cache clear
+            $ streamlit docs
+            $ streamlit --version
+                ''')
+            
+                st.sidebar.markdown('__Pre-release features__')
+                st.sidebar.code('''
+            pip uninstall streamlit
+            pip install streamlit-nightly --upgrade
+                ''')
+                st.sidebar.markdown('<small>Learn more about [experimental features](https://docs.streamlit.io/library/advanced-features/prerelease#beta-and-experimental-features)</small>', unsafe_allow_html=True)
+            
+                st.sidebar.markdown('''<hr>''', unsafe_allow_html=True)
+                st.sidebar.markdown('''<small>[2024 Cheat sheet v1.31.0](https://github.com/daniellewisDL/streamlit-cheat-sheet)  | Apr 2024 | [Gregory Kennedy](https://daniellewisdl.github.io/)</small>''', unsafe_allow_html=True)
+            
+                return None
 
 ##########################
 # Main body of cheat sheet
 ##########################
+- main boby
+  
+            def cs_body():
+            
+                col1, col2, col3 = st.columns(3)
 
-def cs_body():
-
-    col1, col2, col3 = st.columns(3)
-
-    #######################################
+#######################################
     # COLUMN 1
-    #######################################
-    
-    # Display text
+#######################################
+    - Display text
 
-    col1.subheader('Display text')
-    col1.code('''
-st.text('Fixed width text')
-st.markdown('_Markdown_') # see #*
-st.caption('Balloons. Hundreds of them...')
-st.latex(r\'\'\' e^{i\pi} + 1 = 0 \'\'\')
-st.write('Most objects') # df, err, func, keras!
-st.write(['st', 'is <', 3]) # see *
-st.title('My title')
-st.header('My header')
-st.subheader('My sub')
-st.code('for i in range(8): foo()')
+                col1.subheader('Display text')
+                col1.code('''
+            st.text('Fixed width text')
+            st.markdown('_Markdown_') # see #*
+            st.caption('Balloons. Hundreds of them...')
+            st.latex(r\'\'\' e^{i\pi} + 1 = 0 \'\'\')
+            st.write('Most objects') # df, err, func, keras!
+            st.write(['st', 'is <', 3]) # see *
+            st.title('My title')
+            st.header('My header')
+            st.subheader('My sub')
+            st.code('for i in range(8): foo()')
+            
+            # * optional kwarg unsafe_allow_html = True
+            
+                ''')
+            
+                # Display data
+            
+                col1.subheader('Display data')
+                col1.code('''
+            st.dataframe(my_dataframe)
+            st.table(data.iloc[0:10])
+            st.json({'foo':'bar','fu':'ba'})
+            st.metric(label="Temp", value="273 K", delta="1.2 K")
+                ''')
+            
+            
+                # Display media
+            
+                col1.subheader('Display media')
+                col1.code('''
+            st.image('./header.png')
+            st.audio(data)
+            st.video(data)
+                ''')
+            
+                # Columns
+            
+                col1.subheader('Columns')
+                col1.code('''
+            col1, col2 = st.columns(2)
+            col1.write('Column 1')
+            col2.write('Column 2')
 
-# * optional kwarg unsafe_allow_html = True
+- Three columns with different widths
 
-    ''')
+              col1, col2, col3 = st.columns([3,1,1])
 
-    # Display data
-
-    col1.subheader('Display data')
-    col1.code('''
-st.dataframe(my_dataframe)
-st.table(data.iloc[0:10])
-st.json({'foo':'bar','fu':'ba'})
-st.metric(label="Temp", value="273 K", delta="1.2 K")
-    ''')
-
-
-    # Display media
-
-    col1.subheader('Display media')
-    col1.code('''
-st.image('./header.png')
-st.audio(data)
-st.video(data)
-    ''')
-
-    # Columns
-
-    col1.subheader('Columns')
-    col1.code('''
-col1, col2 = st.columns(2)
-col1.write('Column 1')
-col2.write('Column 2')
-
-# Three columns with different widths
-col1, col2, col3 = st.columns([3,1,1])
 # col1 is wider
               
-# Using 'with' notation:
->>> with col1:
->>>     st.write('This is column 1')
-              
-''')
+- Using 'with' notation:
 
-    # Tabs
-    
-    col1.subheader('Tabs')
-    col1.code('''
-# Insert containers separated into tabs:
->>> tab1, tab2 = st.tabs(["Tab 1", "Tab2"])
->>> tab1.write("this is tab 1")
->>> tab2.write("this is tab 2")
+              >>> with col1:
+            >>>     st.write('This is column 1')
+                          
+            ''')
+            
+                # Tabs
+                
+                col1.subheader('Tabs')
+                col1.code('''
+  
+- Insert containers separated into tabs:
+            
+            >>> tab1, tab2 = st.tabs(["Tab 1", "Tab2"])
+            >>> tab1.write("this is tab 1")
+            >>> tab2.write("this is tab 2")
 
-# You can also use "with" notation:
->>> with tab1:
->>>   st.radio('Select one:', [1, 2])
-''')
+- You can also use "with" notation:
 
-    # Control flow
-
-    col1.subheader('Control flow')
-    col1.code('''
+            >>> with tab1:
+            >>>   st.radio('Select one:', [1, 2])
+            ''')
+            
+                # Control flow
+            
+                col1.subheader('Control flow')
+                col1.code('''
+  
 # Stop execution immediately:
 st.stop()
 # Rerun script immediately:
