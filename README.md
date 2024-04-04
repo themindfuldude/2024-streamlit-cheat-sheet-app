@@ -40,9 +40,10 @@ Thanks to : https://github.com/daniellewisDL
               conda deactivate 
 
 - imports:
-import streamlit as st
-from pathlib import Path
-import base64
+  
+              import streamlit as st
+              from pathlib import Path
+              import base64
 
 - initial page config:
 
