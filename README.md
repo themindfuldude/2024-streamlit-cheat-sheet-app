@@ -6,7 +6,7 @@
 
 Code is responsive, so it should work on mobile devices.
 
-[LUNCH APP: https://2024-app-cheat-sheet-app-ewxybnuwqx4qg64fcelqqd.streamlit.app/](https://2024-app-cheat-sheet-app-ewxybnuwqx4qg64fcelqqd.streamlit.app/)
+[LAUNCH APP: https://2024-app-cheat-sheet-app-ewxybnuwqx4qg64fcelqqd.streamlit.app/](https://2024-app-cheat-sheet-app-ewxybnuwqx4qg64fcelqqd.streamlit.app/)
 
 v1.31.0 April 2024
 
