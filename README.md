@@ -6,7 +6,7 @@
 
 Code is responsive, so it should work on mobile devices.
 
-[https://github.com/themindfuldude/2024-streamlit-cheat-sheet](https://2024-app-cheat-sheet-app-ewxybnuwqx4qg64fcelqqd.streamlit.app/)
+[Launch App](https://2024-app-cheat-sheet-app-ewxybnuwqx4qg64fcelqqd.streamlit.app/)
 
 v1.31.0 April 2024
 
