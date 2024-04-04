@@ -3,7 +3,7 @@
 
 2024 Streamlit Cheatsheet App v1.31.0
 
-https://github.com/themindfuldude/2024-streamlit-cheat-sheet-app
+https://2024-app-cheat-sheet-app-ewxybnuwqx4qg64fcelqqd.streamlit.app/
 
 v1.31.0 August 2024
 
