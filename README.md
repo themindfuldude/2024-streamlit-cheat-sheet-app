@@ -21,12 +21,30 @@ Thanks to : https://github.com/daniellewisDL
 * Python 3.11
 
 """
+# How to install the app locally
+- In your Terminal Window Type the command below and press enter:
 
+            git clone https://github.com/themindfuldude/2024-streamlit-cheat-sheet-app.git
+
+# Conda Virtual Environment Setup
+- In your Terminal Window Type the conda create command below and press enter:
+
+            conda create --name strmlit-cheat python=3.11
+
+- To activate the conda virtual environment Type the conda activate command and press enter:
+
+            conda activate strmlit-cheat
+
+- To deactivate a Conda Virtual Environment Type the command below and press enter:
+
+              conda deactivate 
+
+- imports:
 import streamlit as st
 from pathlib import Path
 import base64
 
-# Initial page config
+- initial page config:
 
 st.set_page_config(
      page_title='Streamlit cheat sheet',
