@@ -22,7 +22,6 @@ Thanks to : https://github.com/daniellewisDL
 * Based on 2024 Streamlit v1.31.0
 * Python 3.11
 
-"""
 # How to install the app locally
 - In your Terminal Window Type the command below and press enter:
 
