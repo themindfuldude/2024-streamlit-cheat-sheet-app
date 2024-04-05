@@ -151,22 +151,16 @@ st.video(data)
 st.video(data, subtitles="./subs.vtt")
     ''')
 
-    # Two Equal Columns
+     # Three different columns:
 
     col1.subheader('Two Equal Columns')
     col1.code('''
->>> col1, col2 = st.columns(2)
->>> col1.write("This is column 1")
->>> col2.write("This is column 2")
-
-# Three different columns:
->>> col1, col2, col3 = st.columns([3, 1, 1])
-# col1 is larger.
-
-# You can also use "with" notation:
->>> with col1:
->>>   st.radio("Select one:", [1, 2])
+col1, col2, col3 = st.columns([3,1,1])
+# col1 is larger
               
+# Using 'with' notation:
+>>> with col1:
+>>>   st.radio("Select one:", [1, 2])          
 ''')
 
     # Tabs
