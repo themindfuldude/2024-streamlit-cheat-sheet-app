@@ -76,17 +76,18 @@ st.code('for i in range(8): foo()')
 ```python
 st.dataframe(my_dataframe)
 st.table(data.iloc[0:10])
-st.json({'foo':'bar','fu':'ba'})
-st.metric(label="Temp", value="273 K", delta="1.2 K")
+st.json({"foo":"bar","fu":"ba"})
+st.metric("My metric", 42, 2)
 ```
 
 
 ## Display media
 
 ```python
-st.image('./header.png')
+st.image("./header.png")
 st.audio(data)
 st.video(data)
+st.video(data, subtitles="./subs.vtt")
 ```
 
 
