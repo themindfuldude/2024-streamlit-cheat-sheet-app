@@ -42,7 +42,7 @@ Thanks to : https://github.com/daniellewisDL
               conda deactivate 
 
 - imports:
-  
+
               import streamlit as st
               from pathlib import Path
               import base64
@@ -131,7 +131,7 @@ Thanks to : https://github.com/daniellewisDL
 # Main body of cheat sheet
 ##########################
 - main boby
-  
+
             def cs_body():
             
                 col1, col2, col3 = st.columns(3)
