@@ -3,7 +3,7 @@
 
 2024 Streamlit Cheatsheet App v1.31.0
 
-https://2024-app-cheat-sheet-app-ewxybnuwqx4qg64fcelqqd.streamlit.app/
+https://github.com/themindfuldude/2024-streamlit-cheat-sheet-app
 
 v1.31.0 August 2024
 
@@ -113,16 +113,18 @@ def cs_body():
 
     col1.subheader('Display text')
     col1.code('''
-st.text('Fixed width text')
-st.markdown('_Markdown_') # see #*
-st.caption('Balloons. Hundreds of them...')
-st.latex(r\'\'\' e^{i\pi} + 1 = 0 \'\'\')
-st.write('Most objects') # df, err, func, keras!
-st.write(['st', 'is <', 3]) # see *
-st.title('My title')
-st.header('My header')
-st.subheader('My sub')
-st.code('for i in range(8): foo()')
+st.write("Most objects") # df, err, func, keras!
+st.write(["st", "is <", 3]) # see *
+st.write_stream(my_generator)
+st.write_stream(my_llm_stream)
+
+st.text("Fixed width text")
+st.markdown("_Markdown_") # see *
+st.latex(r""" e^{i\pi} + 1 = 0 """)
+st.title("My title")
+st.header("My header")
+st.subheader("My sub")
+st.code("for i in range(8): foo()")
 
 # * optional kwarg unsafe_allow_html = True
 
@@ -134,8 +136,8 @@ st.code('for i in range(8): foo()')
     col1.code('''
 st.dataframe(my_dataframe)
 st.table(data.iloc[0:10])
-st.json({'foo':'bar','fu':'ba'})
-st.metric(label="Temp", value="273 K", delta="1.2 K")
+st.json({"foo":"bar","fu":"ba"})
+st.metric("My metric", 42, 2)
     ''')
 
 
@@ -143,26 +145,27 @@ st.metric(label="Temp", value="273 K", delta="1.2 K")
 
     col1.subheader('Display media')
     col1.code('''
-st.image('./header.png')
+st.image("./header.png")
 st.audio(data)
 st.video(data)
+st.video(data, subtitles="./subs.vtt")
     ''')
 
-    # Columns
+    # Two Equal Columns
 
-    col1.subheader('Columns')
+    col1.subheader('Two Equal Columns')
     col1.code('''
-col1, col2 = st.columns(2)
-col1.write('Column 1')
-col2.write('Column 2')
+>>> col1, col2 = st.columns(2)
+>>> col1.write("This is column 1")
+>>> col2.write("This is column 2")
 
-# Three columns with different widths
-col1, col2, col3 = st.columns([3,1,1])
-# col1 is wider
-              
-# Using 'with' notation:
+# Three different columns:
+>>> col1, col2, col3 = st.columns([3, 1, 1])
+# col1 is larger.
+
+# You can also use "with" notation:
 >>> with col1:
->>>     st.write('This is column 1')
+>>>   st.radio("Select one:", [1, 2])
               
 ''')
 
@@ -187,13 +190,15 @@ col1, col2, col3 = st.columns([3,1,1])
 # Stop execution immediately:
 st.stop()
 # Rerun script immediately:
-st.experimental_rerun()
+st.rerun()
+# Navigate to another page:
+st.switch_page("pages/my_page.py")
 
 # Group multiple widgets:
->>> with st.form(key='my_form'):
->>>   username = st.text_input('Username')
->>>   password = st.text_input('Password')
->>>   st.form_submit_button('Login')
+>>> with st.form(key="my_form"):
+>>>   username = st.text_input("Username")
+>>>   password = st.text_input("Password")
+>>>   st.form_submit_button("Login")
 ''')
     
     # Personalize apps for users
@@ -218,30 +223,35 @@ st.experimental_rerun()
 
     col2.subheader('Display interactive widgets')
     col2.code('''
-st.button('Hit me')
-st.data_editor('Edit data', data)
-st.checkbox('Check me out')
-st.radio('Pick one:', ['nose','ear'])
-st.selectbox('Select', [1,2,3])
-st.multiselect('Multiselect', [1,2,3])
-st.slider('Slide me', min_value=0, max_value=10)
-st.select_slider('Slide to select', options=[1,'2'])
-st.text_input('Enter some text')
-st.number_input('Enter a number')
-st.text_area('Area for textual entry')
-st.date_input('Date input')
-st.time_input('Time entry')
-st.file_uploader('File uploader')
-st.download_button('On the dl', data)
-st.camera_input("一二三,茄子!")
-st.color_picker('Pick a color')
+st.button("Click me")
+st.download_button("Download file", data)
+st.link_button("Go to gallery", url)
+st.page_link("app.py", label="Home")
+st.data_editor("Edit data", data)
+st.checkbox("I agree")
+st.toggle("Enable")
+st.radio("Pick one", ["cats", "dogs"])
+st.selectbox("Pick one", ["cats", "dogs"])
+st.multiselect("Buy", ["milk", "apples", "potatoes"])
+st.slider("Pick a number", 0, 100)
+st.select_slider("Pick a size", ["S", "M", "L"])
+st.text_input("First name")
+st.number_input("Pick a number", 0, 10)
+st.text_area("Text to translate")
+st.date_input("Your birthday")
+st.time_input("Meeting time")
+st.file_uploader("Upload a CSV")
+st.camera_input("Take a picture")
+st.color_picker("Pick a color")
     ''')
 
     col2.code('''
 # Use widgets\' returned values in variables
->>> for i in range(int(st.number_input('Num:'))): foo()
->>> if st.sidebar.selectbox('I:',['f']) == 'f': b()
->>> my_slider_val = st.slider('Quinn Mallory', 1, 88)
+>>> for i in range(int(st.number_input("Num:"))):
+>>>   foo()
+>>> if st.sidebar.selectbox("I:",["f"]) == "f":
+>>>   b()
+>>> my_slider_val = st.slider("Quinn Mallory", 1, 88)
 >>> st.write(slider_val)
     ''')
     col2.code('''
@@ -258,7 +268,7 @@ st.color_picker('Pick a color')
 >>>    st.write("Hello 👋")
 >>>    st.line_chart(np.random.randn(30, 3))
 
-# Display a chat input widget.
+# Display a chat input widget at bottom .
 >>> st.chat_input("Say something")          
 ''')
 
@@ -306,10 +316,10 @@ st.echo()
 st.help(pandas.DataFrame)
 st.get_option(key)
 st.set_option(key, value)
-st.set_page_config(layout='wide')
-st.experimental_show(objects)
-st.experimental_get_query_params()
-st.experimental_set_query_params(**params)
+st.set_page_config(layout="wide")
+st.query_params[key]
+st.query_params.get_all(key)
+st.query_params.clear()
     ''')
 
     #######################################
@@ -322,11 +332,11 @@ st.experimental_set_query_params(**params)
     col3.subheader('Connect to data sources')
 
     col3.code('''
-st.experimental_connection('pets_db', type='sql')
-conn = st.experimental_connection('sql')
-conn = st.experimental_connection('snowpark')
+st.connection("pets_db", type="sql")
+conn = st.connection("sql")
+conn = st.connection("snowflake")
 
->>> class MyConnection(ExperimentalBaseConnection[myconn.MyConnection]):
+>>> class MyConnection(BaseConnection[myconn.MyConnection]):
 >>>    def _connect(self, **kwargs) -> MyConnection:
 >>>        return myconn.connect(**self._secrets, **kwargs)
 >>>    def query(self, query):
@@ -396,22 +406,27 @@ conn = st.experimental_connection('snowpark')
     col3.subheader('Display progress and status')
     col3.code('''
 # Show a spinner during a process
->>> with st.spinner(text='In progress'):
+>>> with st.spinner(text="In progress"):
 >>>   time.sleep(3)
->>>   st.success('Done')
+>>>   st.success("Done")
 
 # Show and update progress bar
 >>> bar = st.progress(50)
 >>> time.sleep(3)
 >>> bar.progress(100)
 
+>>> with st.status("Authenticating...") as s:
+>>>   time.sleep(2)
+>>>   st.write("Some long response.")
+>>>   s.update(label="Response")
+
 st.balloons()
 st.snow()
-st.toast('Mr Stay-Puft')
-st.error('Error message')
-st.warning('Warning message')
-st.info('Info message')
-st.success('Success message')
+st.toast("Warming up...")
+st.error("Error message")
+st.warning("Warning message")
+st.info("Info message")
+st.success("Success message")
 st.exception(e)
     ''')
 
