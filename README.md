@@ -62,7 +62,7 @@ Thanks to : https://github.com/daniellewisDL
 - In your Terminal Window Type the command below and press enter:
 
             xcode-select --install
-  	      pip install watchdog
+  	        pip install watchdog
 
 
 # Run the app 
