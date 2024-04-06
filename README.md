@@ -61,8 +61,8 @@ Thanks to : https://github.com/daniellewisDL
 # MAC only: For even better performance, install the Watchdog module:
 - In your Terminal Window Type the command below and press enter:
 
-           xcode-select --install
-  	   pip install watchdog
+            xcode-select --install
+  	      pip install watchdog
 
 
 # Run the app 
