@@ -34,19 +34,19 @@ Thanks to : https://github.com/daniellewisDL
 # Conda Virtual Environment Setup
 - In your Terminal Window Type the conda create command below and press enter:
 
-conda create --name any-name python=3.11            
-	Example: conda create --name my-app python=3.11
+            conda create --name any-name python=3.11            
+	    Example: conda create --name my-app python=3.11
 	
 
 - To activate the conda virtual environment Type the conda activate command and press enter:
 
             conda activate strmlit-cheat
-	Example: conda activate my-app 
+	    Example: conda activate my-app 
 
 
 - To deactivate a Conda Virtual Environment Type the command below and press enter:
 
-              conda deactivate 
+  	    conda deactivate 
 
 # Clone the repository code.  
 - In your Terminal Window Type the command below and press enter:
@@ -61,8 +61,8 @@ conda create --name any-name python=3.11
 # MAC only: For even better performance, install the Watchdog module:
 - In your Terminal Window Type the command below and press enter:
 
-  xcode-select --install
-  	  pip install watchdog
+           xcode-select --install
+  	   pip install watchdog
 
 
 # Run the app 
