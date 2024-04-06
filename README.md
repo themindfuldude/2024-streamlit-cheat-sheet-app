@@ -29,7 +29,7 @@ Thanks to : https://github.com/daniellewisDL
             
             https://www.python.org/downloads/release/python-3118/
             
-            https://cursor.sh/ (My favorite Free AI Co-Pilot VS Studio Code based)
+            https://cursor.sh/ (My favorite Free AI Co-Pilot - VS Studio Code Based)
             
             https://code.visualstudio.com/
 
