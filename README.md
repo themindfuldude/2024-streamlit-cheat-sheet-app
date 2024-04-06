@@ -46,7 +46,7 @@ Thanks to : https://github.com/daniellewisDL
 
               conda deactivate 
 
-# Clone the repository git code.  
+# Clone the repository code.  
 - In your Terminal Window Type the command below and press enter:
 
             git clone https://github.com/themindfuldude/2024-streamlit-cheat-sheet-app.git
