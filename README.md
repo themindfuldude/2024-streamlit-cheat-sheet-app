@@ -23,9 +23,12 @@ Thanks to : https://github.com/daniellewisDL
 * Python 3.11
 
 # How to install the app locally
-- In your Terminal Window Type the command below and press enter:
+- Download and install Git, Python 3.11, Cursor (VSCode) ide:
 
-            git clone https://github.com/themindfuldude/2024-streamlit-cheat-sheet-app.git
+https://git-scm.com/downloads
+https://www.python.org/downloads/release/python-3118/
+https://cursor.sh/ (My favorite Free AI Co-Pilot VS Studio Code based)
+https://code.visualstudio.com/
 
 # Conda Virtual Environment Setup
 - In your Terminal Window Type the conda create command below and press enter:
@@ -40,7 +43,30 @@ Thanks to : https://github.com/daniellewisDL
 
               conda deactivate 
 
-# Cheat sheet content
+# Clone the repository git code.  
+- In your Terminal Window Type the command below and press enter:
+
+            git clone https://github.com/themindfuldude/2024-streamlit-cheat-sheet-app.git
+
+# Pip install dependencies.  
+- In your Terminal Window Type the command below and press enter:
+
+            pip install pandas plotly streamlit 
+
+# MAC only: For even better performance, install the Watchdog module:
+- In your Terminal Window Type the command below and press enter:
+
+  xcode-select --install
+  	  pip install watchdog
+
+
+# Run the app 
+- In your Terminal Window Type the command below and press enter:
+
+            streamlit run nameofyourappfile.py
+
+
+# Streamlit Cheat Sheet Content
 
 ## Magic commands
 
