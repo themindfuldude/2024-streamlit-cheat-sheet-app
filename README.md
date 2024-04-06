@@ -35,13 +35,13 @@ Thanks to : https://github.com/daniellewisDL
 - In your Terminal Window Type the conda create command below and press enter:
 
             conda create --name any-name python=3.11            
-	          Example: conda create --name my-app python=3.11
+	        Example: conda create --name my-app python=3.11
 	
 
 - To activate the conda virtual environment Type the conda activate command and press enter:
 
            conda activate strmlit-cheat
-	         Example: conda activate my-app 
+	       Example: conda activate my-app 
 
 
 - To deactivate a Conda Virtual Environment Type the command below and press enter:
