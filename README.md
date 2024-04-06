@@ -23,24 +23,26 @@ Thanks to : https://github.com/daniellewisDL
 * Python 3.11
 
 # How to install the app locally
-- Download and install Git, Python 3.11, Cursor (VSCode) ide:
+- Download and install Git, Python 3.11, Miniconda, Cursor (VSCode) ide:
 
             https://git-scm.com/downloads
-            
             https://www.python.org/downloads/release/python-3118/
-            
-            https://cursor.sh/ (My favorite Free AI Co-Pilot - VS Studio Code Based)
-            
+            https://docs.anaconda.com/free/miniconda/index.html
+            https://cursor.sh/ (My favorite Free AI Co-Pilot VS Studio Code based)
             https://code.visualstudio.com/
 
 # Conda Virtual Environment Setup
 - In your Terminal Window Type the conda create command below and press enter:
 
-            conda create --name strmlit-cheat python=3.11
+conda create --name any-name python=3.11            
+	Example: conda create --name my-app python=3.11
+	
 
 - To activate the conda virtual environment Type the conda activate command and press enter:
 
             conda activate strmlit-cheat
+	Example: conda activate my-app 
+
 
 - To deactivate a Conda Virtual Environment Type the command below and press enter:
 
