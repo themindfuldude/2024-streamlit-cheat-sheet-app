@@ -25,10 +25,13 @@ Thanks to : https://github.com/daniellewisDL
 # How to install the app locally
 - Download and install Git, Python 3.11, Cursor (VSCode) ide:
 
-https://git-scm.com/downloads
-https://www.python.org/downloads/release/python-3118/
-https://cursor.sh/ (My favorite Free AI Co-Pilot VS Studio Code based)
-https://code.visualstudio.com/
+            https://git-scm.com/downloads
+            
+            https://www.python.org/downloads/release/python-3118/
+            
+            https://cursor.sh/ (My favorite Free AI Co-Pilot VS Studio Code based)
+            
+            https://code.visualstudio.com/
 
 # Conda Virtual Environment Setup
 - In your Terminal Window Type the conda create command below and press enter:
